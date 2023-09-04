@@ -18,7 +18,7 @@ export default function TwitterFollowCard({
     setIsFollowing(!isFollowing);
   };
 
-  const followStatus = isFollowing ? "Dejar de seguir" : "Seguir";
+  const followStatus = isFollowing ? "Siguiendo" : "Seguir";
   const followButtonStyle = isFollowing
     ? "tw-follow-card-info-button tw-follow-is-following"
     : "tw-follow-card-info-button";
@@ -41,7 +41,7 @@ export default function TwitterFollowCard({
 
       <aside>
         <button className={followButtonStyle} onClick={setLike}>
-          {followStatus}
+          <span className="tw-follow-card-follow-status">{followStatus}</span>
         </button>
       </aside>
     </article>

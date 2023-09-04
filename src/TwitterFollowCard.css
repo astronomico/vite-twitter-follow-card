@@ -29,16 +29,19 @@
 }
 
 .tw-follow-card-info-button {
+  min-width: 140px;
   cursor: pointer;
   margin-left: 16px;
   border: 1px solid #c3d8e2;
-  border-radius: 999px;
+  border-radius: 22px;
   padding: 6px 16px;
   font-weight: bold;
   transition: 0.3s ease background-color;
 }
 .tw-follow-card-info-button.tw-follow-is-following {
   border-color: #4289e6;
+  background-color: #4289e65b;
+  color: white;
 }
 
 .tw-follow-card-info-button:hover {
@@ -47,6 +50,15 @@
 }
 
 .tw-follow-card-info-button.tw-follow-is-following:hover {
-  background-color: #e74a4a;
+  background-color: #e74a4a23;
+  border-color: #e74a4a;
   color: white;
+}
+.tw-follow-card-info-button.tw-follow-is-following:hover::before {
+  content: "Dejar de seguir";
+}
+
+.tw-follow-card-info-button.tw-follow-is-following:hover
+  .tw-follow-card-follow-status {
+  display: none;
 }
