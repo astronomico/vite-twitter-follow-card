@@ -1,15 +1,27 @@
 /* eslint-disable react/prop-types */
 // import React from "react";
+
+import { useState } from "react";
 import "./TwitterFollowCard.css";
 
-export default function TwitterFollowCard({ username, name, isFollowing }) {
+export default function TwitterFollowCard({
+  username,
+  name,
+  initialIsFollowing,
+}) {
+  const [isFollowing, setIsFollowing] = useState(initialIsFollowing);
+
   const formattedUsername = `@${username}`;
   const avatarSrc = `https://unavatar.io/${username}`;
 
-  const setLike = (e) => {
-    e.preventDefault();
-    console.log(e.active);
+  const setLike = () => {
+    setIsFollowing(!isFollowing);
   };
+
+  const followStatus = isFollowing ? "Dejar de seguir" : "Seguir";
+  const followButtonStyle = isFollowing
+    ? "tw-follow-card-info-button tw-follow-is-following"
+    : "tw-follow-card-info-button";
 
   return (
     <article className="tw-follow-card">
@@ -28,8 +40,8 @@ export default function TwitterFollowCard({ username, name, isFollowing }) {
       </header>
 
       <aside>
-        <button className="tw-follow-card-info-button" onClick={setLike}>
-          {isFollowing ? "Dejar de seguir" : "Seguir"}
+        <button className={followButtonStyle} onClick={setLike}>
+          {followStatus}
         </button>
       </aside>
     </article>

@@ -7,32 +7,32 @@ function App() {
       <TwitterFollowCard
         username="lobomode"
         name="Nahuel Cabrera"
-        isFollowing
+        initialIsFollowing
       ></TwitterFollowCard>
       <TwitterFollowCard
         username="deepuniversalok"
         name="Deep Universal"
-        isFollowing={true}
+        initialIsFollowing={true}
       ></TwitterFollowCard>
       <TwitterFollowCard
         username="entermake"
         name="Entermake"
-        isFollowing={false}
+        initialIsFollowing={false}
       ></TwitterFollowCard>
       <TwitterFollowCard
         username="jetcket"
         name="Jetcket"
-        isFollowing={false}
+        initialIsFollowing={false}
       ></TwitterFollowCard>
       <TwitterFollowCard
         username="nowket"
         name="Nowket"
-        isFollowing={false}
+        initialIsFollowing={false}
       ></TwitterFollowCard>
       <TwitterFollowCard
         username="conartic"
         name="Conartic"
-        isFollowing={false}
+        initialIsFollowing={false}
       ></TwitterFollowCard>
     </section>
   );
